@@ -1,5 +1,7 @@
 USE codeup_test_db;
 
+SELECT 'Updates starting!' AS 'Info';
+
 SELECT * FROM albums;
 UPDATE albums
 SET author_first_name = 'Samuel', author_last_name = 'Clemens';
@@ -18,3 +20,4 @@ SET artist = 'Micheal Jackson', author_last_name = 'Peter Jackson'
 WHERE id = 4;
 SELECT * FROM albums;
 
+SELECT 'Updates done!' AS 'Info';
