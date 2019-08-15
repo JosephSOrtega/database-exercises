@@ -31,3 +31,7 @@ WHERE birth_date like ('%12-25') and hire_date like ('199%');;
 SELECT emp_no, first_name, last_name
 FROM employees
 WHERE last_name like ('%q%');
+
+SELECT emp_no, first_name, last_name
+FROM employees
+WHERE last_name not like ('%qu%') and last_name like ('%q%');
