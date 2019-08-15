@@ -6,7 +6,7 @@ WHERE gender = 'm' and (first_name = 'Irena' or first_name = 'Vidya' or first_na
 
 SELECT emp_no, first_name, last_name
 FROM employees
-WHERE last_name like ('e%');
+WHERE last_name like ('e%') or last_name like ('%e');
 
 SELECT emp_no, first_name, last_name, hire_date
 FROM employees
