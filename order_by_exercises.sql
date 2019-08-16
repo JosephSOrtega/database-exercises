@@ -30,6 +30,7 @@ SELECT emp_no, first_name, last_name, birth_date
 FROM employees
 WHERE birth_date like ('%12-25') and hire_date like ('199%')
 order by birth_date Asc, hire_date desc;
+
 SELECT emp_no, first_name, last_name
 FROM employees
 WHERE last_name like ('%q%');
