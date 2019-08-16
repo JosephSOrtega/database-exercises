@@ -22,9 +22,18 @@ FROM employees as e
          JOIN dept_emp de on e.emp_no = de.emp_no
          join departments ap on de.dept_no = ap.dept_no
          join titles t on e.emp_no = t.emp_no
-where ap.dept_name like 'Customer Service' and de.to_date like '9999-%'
+where ap.dept_name like 'Customer Service'
+  and de.to_date like '9999-%'
 group by t.title asc;
 
+
+SELECT ap.dept_name as 'Department Name', concat(e.first_name, ' ', e.last_name) as 'Department Manager', Max(s.salary) as 'Salary'
+FROM employees as e
+         JOIN dept_manager de on e.emp_no = de.emp_no
+         join salaries s on de.emp_no = s.emp_no
+         join departments ap on de.dept_no = ap.dept_no
+where (de.to_date > s.to_date) and de.to_date like '9999-%'
+group by ap.dept_name, concat(e.first_name, ' ', e.last_name) asc;
 
 
 # select concat_ws(' ', e.first_name, e.last_name) as 'full_name', d.dept_name
